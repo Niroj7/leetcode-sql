@@ -1,0 +1,55 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 -- =====================================================\
+-- Day 01: SQL Basics Practice\
+-- Topics: SELECT, WHERE, GROUP BY, COUNT, SUM, AVG\
+-- =====================================================\
+\
+-- Q1: Count employees in each department\
+SELECT\
+  department,\
+  COUNT(*) AS employee_count\
+FROM employees\
+GROUP BY department;\
+\
+-- -----------------------------------------------------\
+\
+-- Q2: Find total salary paid per department\
+SELECT\
+  department,\
+  SUM(salary) AS total_salary\
+FROM employees\
+GROUP BY department;\
+\
+-- -----------------------------------------------------\
+\
+-- Q3: Find departments with more than 5 employees\
+SELECT\
+  department\
+FROM employees\
+GROUP BY department\
+HAVING COUNT(*) > 5;\
+\
+-- -----------------------------------------------------\
+\
+-- Q4: Find average salary of employees earning more than 50,000\
+SELECT\
+  AVG(salary) AS avg_salary\
+FROM employees\
+WHERE salary > 50000;\
+\
+-- -----------------------------------------------------\
+\
+-- Q5: Count number of employees earning more than 70,000 per department\
+SELECT\
+  department,\
+  COUNT(*) AS high_earners\
+FROM employees\
+WHERE salary > 70000\
+GROUP BY department;\
+}
